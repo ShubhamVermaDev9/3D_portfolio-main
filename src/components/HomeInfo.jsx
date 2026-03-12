@@ -10,8 +10,7 @@ const HomeInfo = ({ currentStage }) => {
         <span className='font-semibold mx-2 text-white'>Shubham Verma</span>
         👋
         <br />
-      I love building beautiful UI/UX and intelligent systems.  
-     🔄 Rotate the model to explore more!
+      I love building beautiful UI/UX and intelligent systems. <br /> Rotate the model to explore more!
       </h1>
     );
 
