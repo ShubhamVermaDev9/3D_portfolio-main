@@ -194,7 +194,7 @@ const Navbar = () => {
           <div className="nav-logo-box">
             <img src={logo} alt="logo" />
           </div>
-          <span className="nav-logo-text">shubham<span>.</span>folio</span>
+          <span className="nav-logo-text">shubham<span>.</span>Portfolio</span>
         </NavLink>
 
         <nav className="nav-links">
