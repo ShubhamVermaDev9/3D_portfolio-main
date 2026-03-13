@@ -1,71 +1,71 @@
 import { useEffect, useRef } from "react";
 import {
-  FaLeaf, FaHandPaper, FaShoppingCart,
-  FaRobot, FaChartBar, FaBrain,
+  FaTrophy, FaLeaf, FaEye, FaLungs, FaGamepad, FaCube,
 } from "react-icons/fa";
+import Footer from "./Footer";
 
 const arrow = "https://api.iconify.design/heroicons:arrow-right-16-solid.svg";
 
 const projects = [
   {
-    icon: <FaLeaf />,
-    name: "Plant Disease Detection",
+    icon: <FaTrophy />,
+    name: "Award Winning Website",
     description:
-      "CNN model built with TensorFlow & Keras to detect plant diseases from leaf images using image preprocessing and augmentation.",
-    stack: ["Python", "TensorFlow", "Keras", "OpenCV"],
-    github: "https://github.com/ShubhamVermaDev9",
-    link: "#",
-    tag: "Deep Learning",
-  },
-  {
-    icon: <FaHandPaper />,
-    name: "ASL Sign Language Detection",
-    description:
-      "Real-time ASL recognition system using CNN and OpenCV enabling low latency webcam gesture prediction.",
-    stack: ["Python", "CNN", "OpenCV", "MediaPipe"],
-    github: "https://github.com/ShubhamVermaDev9",
-    link: "#",
-    tag: "Computer Vision",
-  },
-  {
-    icon: <FaShoppingCart />,
-    name: "E-Commerce Recommendation",
-    description:
-      "Recommendation system using collaborative filtering and content-based filtering with a React frontend UI.",
-    stack: ["React.js", "Python", "Scikit-learn", "Tailwind"],
-    github: "https://github.com/ShubhamVermaDev9",
+      "A visually stunning, award-style web experience built with React, GSAP animations, and Tailwind CSS — focused on immersive UI and smooth interactions.",
+    stack: ["React.js", "Tailwind", "GSAP", "Vite"],
+    github: "https://github.com/ShubhamVermaDev9/award-winning-website-main",
     link: "#",
     tag: "Web Dev",
   },
   {
-    icon: <FaRobot />,
-    name: "AI Chatbot Assistant",
+    icon: <FaLeaf />,
+    name: "Plant Disease Detection",
     description:
-      "Context-aware chatbot using NLP and transformer models, integrated with a clean React interface and REST API backend.",
-    stack: ["Python", "Transformers", "Flask", "React.js"],
-    github: "https://github.com/ShubhamVermaDev9",
-    link: "#",
-    tag: "NLP",
-  },
-  {
-    icon: <FaChartBar />,
-    name: "Student Performance Predictor",
-    description:
-      "ML pipeline predicting student outcomes using regression models trained on academic and socio-economic features.",
-    stack: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-    github: "https://github.com/ShubhamVermaDev9",
-    link: "#",
-    tag: "Machine Learning",
-  },
-  {
-    icon: <FaBrain />,
-    name: "Brain Tumor Classification",
-    description:
-      "MRI scan classifier using a fine-tuned ResNet50 model achieving high accuracy across four tumor categories.",
-    stack: ["Python", "PyTorch", "ResNet50", "NumPy"],
-    github: "https://github.com/ShubhamVermaDev9",
+      "Deep learning model trained to detect plant diseases from leaf images using CNN architecture with TensorFlow and Keras, including data augmentation.",
+    stack: ["Python", "TensorFlow", "Keras", "CNN"],
+    github: "https://github.com/ShubhamVermaDev9/Plant_Disease_Model_Training",
     link: "#",
     tag: "Deep Learning",
+  },
+  {
+    icon: <FaEye />,
+    name: "YOLOv8 Object Detection",
+    description:
+      "Real-time object detection pipeline using YOLOv8, trained and evaluated on custom datasets with optimized inference for speed and accuracy.",
+    stack: ["Python", "YOLOv8", "OpenCV", "PyTorch"],
+    github: "https://github.com/ShubhamVermaDev9/ML-projects/blob/main/YOLOv8_Object_Detection.ipynb",
+    link: "#",
+    tag: "Computer Vision",
+  },
+  {
+    icon: <FaLungs />,
+    name: "VGG16 Pneumonia Classifier",
+    description:
+      "Medical image classifier using transfer learning on VGG16 to detect pneumonia from chest X-rays with high diagnostic accuracy.",
+    stack: ["Python", "VGG16", "Keras", "NumPy"],
+    github: "https://github.com/ShubhamVermaDev9/ML-projects/blob/main/VGG16_Pneumonia_Classifier_.ipynb",
+    link: "#",
+    tag: "Deep Learning",
+  },
+  {
+    icon: <FaGamepad />,
+    name: "Talon Gaming",
+    description:
+      "A fully designed and deployed gaming website built from a Figma prototype — featuring a dark aesthetic, responsive layout, and polished UI components.",
+    stack: ["Figma", "HTML", "CSS", "JavaScript"],
+    github: "#",
+    link: "https://talon-gaming-60501244.figma.site/",
+    tag: "UI Design",
+  },
+  {
+    icon: <FaCube />,
+    name: "3D Hero Section",
+    description:
+      "An interactive 3D hero section for the web using Three.js — featuring animated 3D models, lighting effects, and smooth camera transitions.",
+    stack: ["Three.js", "React.js", "JavaScript", "CSS"],
+    github: "https://github.com/ShubhamVermaDev9/3DHeroSection",
+    link: "#",
+    tag: "3D / Web",
   },
 ];
 
@@ -116,7 +116,7 @@ const css = `
   .pj-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 68px 48px 80px;
+    padding: 106px 48px 80px;
   }
 
   /* ── ANIMATIONS ── */
@@ -422,6 +422,7 @@ export default function Projects() {
 
         </div>
       </div>
+      <Footer />
     </>
   );
 }
