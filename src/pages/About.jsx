@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FaTrophy, FaRunning, FaCode, FaBrain } from "react-icons/fa";
+import Footer from "./Footer";
 import { MdSportsKabaddi } from "react-icons/md";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { BsPalette } from "react-icons/bs";
@@ -84,8 +85,6 @@ const css = `
     --section-mb:   18px;
   }
 
-  html, body, #root { height:100%; overflow:hidden; }
-
   .ab-vanta   { position:fixed; inset:0; z-index:0; }
   .ab-overlay {
     position:fixed; inset:0; z-index:1; pointer-events:none;
@@ -98,9 +97,8 @@ const css = `
 
   /* ── TWO-COLUMN SHELL ── */
   .ab-page {
-    padding-top:3rem;
     position:relative; z-index:2;
-    height:100vh; overflow:hidden;
+    min-height:calc(100vh - 60px);
     display:grid;
     grid-template-columns: minmax(0,1fr) minmax(0,390px);
     font-family:var(--font); color:var(--ink2);
@@ -108,17 +106,15 @@ const css = `
 
   /* ── LEFT ── */
   .ab-left {
-    padding: 28px 36px 28px 40px;
-    overflow-y:auto; scrollbar-width:none;
+    padding: 90px 36px 40px 40px;
     display:flex; flex-direction:column;
   }
-  .ab-left::-webkit-scrollbar { display:none; }
 
   /* ── RIGHT ── */
   .ab-right {
     padding: 28px 28px 28px 14px;
     display:flex; flex-direction:column;
-    gap: 10px; overflow:hidden;
+    gap: 10px;
   }
 
   /* ── ANIMATIONS ── */
@@ -457,7 +453,7 @@ export default function About() {
       <div ref={vantaRef} className="ab-vanta" />
       <div className="ab-overlay" />
 
-      <div className="ab-page pt">
+      <div className="ab-page">
 
         {/* ══════ LEFT ══════ */}
         <div className="ab-left">
@@ -465,9 +461,11 @@ export default function About() {
           {/* Hero */}
           <div className="ab-badge r0"><span className="ab-dot" /> About Me</div>
           <h1 className="ab-name r1"><span>Shubham</span><br />Verma</h1>
+          <p className="ab-role r2">Frontend Developer &amp; ML Enthusiast</p>
           <p className="ab-bio r2">
             Frontend Developer proficient in React.js and Tailwind CSS with
-            hands-on experience in Machine Learning.
+            hands-on experience in Machine Learning and Computer Vision.
+            I build elegant interfaces powered by intelligent systems.
           </p>
 
           <div className="ab-rule r3" />
@@ -583,6 +581,7 @@ export default function About() {
 
         </div>
       </div>
+      <Footer />
     </>
   );
 }
