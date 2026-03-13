@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import {
-  FaTrophy, FaLeaf, FaEye, FaLungs, FaGamepad, FaCube,
+  FaTrophy, FaLeaf, FaEye, FaLungs, FaMountain, FaCube,
 } from "react-icons/fa";
 import Footer from "./Footer";
 
@@ -14,7 +14,6 @@ const projects = [
       "A visually stunning, award-style web experience built with React, GSAP animations, and Tailwind CSS — focused on immersive UI and smooth interactions.",
     stack: ["React.js", "Tailwind", "GSAP", "Vite"],
     github: "https://github.com/ShubhamVermaDev9/award-winning-website-main",
-    link: "#",
     tag: "Web Dev",
   },
   {
@@ -24,7 +23,6 @@ const projects = [
       "Deep learning model trained to detect plant diseases from leaf images using CNN architecture with TensorFlow and Keras, including data augmentation.",
     stack: ["Python", "TensorFlow", "Keras", "CNN"],
     github: "https://github.com/ShubhamVermaDev9/Plant_Disease_Model_Training",
-    link: "#",
     tag: "Deep Learning",
   },
   {
@@ -34,7 +32,6 @@ const projects = [
       "Real-time object detection pipeline using YOLOv8, trained and evaluated on custom datasets with optimized inference for speed and accuracy.",
     stack: ["Python", "YOLOv8", "OpenCV", "PyTorch"],
     github: "https://github.com/ShubhamVermaDev9/ML-projects/blob/main/YOLOv8_Object_Detection.ipynb",
-    link: "#",
     tag: "Computer Vision",
   },
   {
@@ -44,18 +41,16 @@ const projects = [
       "Medical image classifier using transfer learning on VGG16 to detect pneumonia from chest X-rays with high diagnostic accuracy.",
     stack: ["Python", "VGG16", "Keras", "NumPy"],
     github: "https://github.com/ShubhamVermaDev9/ML-projects/blob/main/VGG16_Pneumonia_Classifier_.ipynb",
-    link: "#",
     tag: "Deep Learning",
   },
   {
-    icon: <FaGamepad />,
-    name: "Talon Gaming",
+    icon: <FaMountain />,
+    name: "Rockfall Prediction & Alert System",
     description:
-      "A fully designed and deployed gaming website built from a Figma prototype — featuring a dark aesthetic, responsive layout, and polished UI components.",
-    stack: ["Figma", "HTML", "CSS", "JavaScript"],
+      "Frontend dashboard for a rockfall prediction and real-time alert system — visualizing sensor data, risk zones, and automated warnings for safety monitoring.",
+    stack: ["React.js", "Tailwind", "Chart.js", "CSS"],
     github: "#",
-    link: "https://talon-gaming-60501244.figma.site/",
-    tag: "UI Design",
+    tag: "Web Dev",
   },
   {
     icon: <FaCube />,
@@ -64,7 +59,6 @@ const projects = [
       "An interactive 3D hero section for the web using Three.js — featuring animated 3D models, lighting effects, and smooth camera transitions.",
     stack: ["Three.js", "React.js", "JavaScript", "CSS"],
     github: "https://github.com/ShubhamVermaDev9/3DHeroSection",
-    link: "#",
     tag: "3D / Web",
   },
 ];
@@ -403,14 +397,11 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Footer: live link + github */}
+                {/* Footer: github only */}
                 <div className="pj-divider" />
                 <div className="pj-footer">
-                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="pj-link">
-                    Live Link <img src={arrow} alt="→" width={11} />
-                  </a>
-                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="pj-github">
-                    <GithubIcon /> GitHub
+                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="pj-link">
+                    <GithubIcon />&nbsp; View on GitHub <img src={arrow} alt="→" width={11} />
                   </a>
                 </div>
 
