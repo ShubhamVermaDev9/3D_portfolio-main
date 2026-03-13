@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import Footer from "./Footer";
 import { FiSend } from "react-icons/fi";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 
@@ -47,7 +48,7 @@ const css = `
     position: relative; z-index: 2;
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
-    padding: 72px 32px 60px;
+    padding: 110px 32px 60px;
     font-family: var(--font);
     color: var(--ink2);
   }
@@ -278,7 +279,7 @@ export default function Contact() {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...form }),
+        body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...form, subject: `Portfolio Contact from ${form.name}` }),
       });
       const data = await res.json();
       if (data.success) {
@@ -376,7 +377,7 @@ export default function Contact() {
                 <div className="ct-link-icon"><FaEnvelope /></div>
                 <div className="ct-link-info">
                   <span className="ct-link-label">Email</span>
-                  <span className="ct-link-value">shubham@example.com</span>
+                  <span className="ct-link-value">2k23.it2310808@gmail.com</span>
                 </div>
               </a>
 
@@ -400,6 +401,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
