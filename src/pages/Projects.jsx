@@ -9,7 +9,7 @@ const arrow = "https://api.iconify.design/heroicons:arrow-right-16-solid.svg";
 const projects = [
   {
     icon: <FaTrophy />,
-    name: "Award Winning Website",
+    name: "Award Winning Website(Clone)",
     description:
       "A visually stunning, award-style web experience built with React, GSAP animations, and Tailwind CSS — focused on immersive UI and smooth interactions.",
     stack: ["React.js", "Tailwind", "GSAP", "Vite"],
