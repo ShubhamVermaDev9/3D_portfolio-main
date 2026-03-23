@@ -67,6 +67,7 @@ const css = `
   /* ── OUTER CARD ── */
   .ct-card {
     display: flex;
+    flex-direction: row;
     width: 100%; max-width: 980px;
     min-height: 560px;
     background: var(--glass);
@@ -236,9 +237,150 @@ const css = `
     backdrop-filter: blur(14px);
     z-index: 9999;
     animation: rise .3s both;
+    white-space: nowrap;
+    max-width: calc(100vw - 32px);
+    white-space: normal;
+    text-align: center;
   }
   .ct-toast.success { background: rgba(86,193,140,.22); color: #166534; border: 1px solid rgba(86,193,140,.35); }
   .ct-toast.error   { background: rgba(220,80,80,.15);  color: #7f1d1d; border: 1px solid rgba(220,80,80,.3); }
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE BREAKPOINTS
+  ══════════════════════════════════════════ */
+
+  /* ── TABLET (≤ 768px): stack vertically ── */
+  @media (max-width: 768px) {
+    .ct-page {
+      padding: 90px 16px 48px;
+      align-items: flex-start;
+    }
+
+    .ct-card {
+      flex-direction: column;
+      min-height: unset;
+      border-radius: 18px;
+    }
+
+    .ct-left {
+      padding: 32px 28px;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,.4);
+    }
+
+    .ct-right {
+      width: 100%;
+      padding: 28px 28px 36px;
+      gap: 20px;
+      /* Switch to a horizontal layout for the icon + tagline on tablet */
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ct-icon-wrap {
+      width: 68px; height: 68px;
+      font-size: 28px;
+      border-radius: 16px;
+    }
+
+    .ct-links {
+      /* Make links 2-column on tablet */
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    /* Email link spans full width since it has a long value */
+    .ct-links a:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* ── MOBILE (≤ 480px): single column, tight spacing ── */
+  @media (max-width: 480px) {
+    .ct-page {
+      padding: 80px 12px 40px;
+    }
+
+    .ct-card {
+      border-radius: 14px;
+    }
+
+    .ct-left {
+      padding: 24px 20px;
+    }
+
+    .ct-heading {
+      font-size: clamp(22px, 7vw, 30px);
+      letter-spacing: -1px;
+    }
+
+    .ct-sub {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .ct-form {
+      gap: 12px;
+    }
+
+    .ct-input, .ct-textarea {
+      font-size: 14px; /* prevent iOS zoom on focus */
+      padding: 10px 13px;
+    }
+
+    .ct-submit {
+      width: 100%;
+      justify-content: center;
+      align-self: stretch;
+      padding: 14px 24px;
+      font-size: 12px;
+    }
+
+    .ct-right {
+      padding: 24px 20px 32px;
+      gap: 16px;
+    }
+
+    .ct-links {
+      /* Back to single column on small phones */
+      grid-template-columns: 1fr;
+    }
+
+    .ct-links a:first-child {
+      grid-column: auto;
+    }
+
+    .ct-link-value {
+      font-size: 11px;
+    }
+
+    .ct-tagline {
+      font-size: 13px;
+    }
+
+    .ct-toast {
+      top: 14px;
+      padding: 10px 16px;
+      font-size: 12px;
+    }
+  }
+
+  /* ── VERY SMALL (≤ 360px) ── */
+  @media (max-width: 360px) {
+    .ct-left {
+      padding: 20px 16px;
+    }
+
+    .ct-right {
+      padding: 20px 16px 28px;
+    }
+
+    .ct-badge {
+      font-size: 9px;
+      padding: 4px 10px;
+    }
+  }
 `;
 
 export default function Contact() {
