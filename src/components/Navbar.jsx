@@ -10,6 +10,14 @@ const LINKS = [
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
 
+  /* ── Hover trigger zone ── */
+  .nb-trigger {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    z-index: 101;
+  }
+
   .nb-bar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -24,6 +32,16 @@ const css = `
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255,255,255,0.35);
     font-family: 'Outfit', sans-serif;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .nb-bar.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
   }
 
   /* ── Logo ── */
@@ -157,15 +175,28 @@ const css = `
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navVisible, setNavVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => setMenuOpen(false), [location]);
+
+  // Hide nav when route changes (optional: keep visible if preferred)
+  useEffect(() => setNavVisible(false), [location]);
 
   return (
     <>
       <style>{css}</style>
 
-      <header className="nb-bar">
+      {/* Invisible hover trigger strip at the top */}
+      <div
+        className="nb-trigger"
+        onMouseEnter={() => setNavVisible(true)}
+      />
+
+      <header
+        className={`nb-bar${navVisible ? " visible" : ""}`}
+        onMouseLeave={() => setNavVisible(false)}
+      >
         <NavLink to="/" className="nb-logo">
           shubham<span>.</span>dev
         </NavLink>
